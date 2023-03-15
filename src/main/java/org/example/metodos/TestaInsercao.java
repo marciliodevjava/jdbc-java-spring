@@ -1,13 +1,12 @@
 package org.example.metodos;
 
 import org.example.ConectionFactory;
-import org.example.Produto;
+import org.example.metodos.domain.Produto;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class TestaInsercao {
 

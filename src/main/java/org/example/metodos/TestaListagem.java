@@ -1,7 +1,7 @@
 package org.example.metodos;
 
 import org.example.ConectionFactory;
-import org.example.Produto;
+import org.example.metodos.domain.Produto;
 
 import java.sql.*;
 
