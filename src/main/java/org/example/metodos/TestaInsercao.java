@@ -15,8 +15,8 @@ public class TestaInsercao {
         ConectionFactory conectionFactory = new ConectionFactory();
         Connection connection = conectionFactory.criaConexao();
 
-        String nome = "'Notebook DELL'";
-        String descricao = "'16GB Ram HD 1TB Processador AMD Ryzem 5'";
+        String nome = "'Cadeira'";
+        String descricao = "'Madeira nobre'";
 
         Statement stm = connection.createStatement();
         stm.execute("INSERT INTO produto(nome, descricao) VALUES(" + nome + ", " + descricao + ")", Statement.RETURN_GENERATED_KEYS);
