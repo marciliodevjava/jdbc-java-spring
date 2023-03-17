@@ -15,9 +15,9 @@ public class TestaInsercaoComParametro {
         String descricaoEnvivou = "1000 Folhas A4";
 
         nomeEnviou = verifcaSqlInj(nomeEnviou);
-        String nome = String.format("'%s'", nomeEnviou);
+        String nome = String.format("%s", nomeEnviou);
         descricaoEnvivou = verifcaSqlInj(descricaoEnvivou);
-        String descricao = String.format("'%s'", descricaoEnvivou);
+        String descricao = String.format("%s", descricaoEnvivou);
 
         System.out.println(nome);
         System.out.println(descricao);
