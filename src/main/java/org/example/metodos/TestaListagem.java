@@ -11,24 +11,24 @@ public class TestaListagem {
         ConectionFactory conectionFactory = new ConectionFactory();
         Connection connection = conectionFactory.criaConexao();
 
-        Statement stm = connection.createStatement();
-        boolean resultadoTrue = stm.execute("SELECT id, nome, descricao FROM produto");
+        PreparedStatement stm = connection.prepareStatement("SELECT id, nome, descricao FROM produto", Statement.RETURN_GENERATED_KEYS);
+        stm.execute();
         ResultSet rst = stm.getResultSet();
 
-        if(resultadoTrue){
-            while (rst.next()){
-                Produto produto = new Produto();
-                Integer id = rst.getInt("id");
-                produto.setId(id);
-                String nome = rst.getString("nome");
-                produto.setNome(nome);
-                String descricao = rst.getString("descricao");
-                produto.setDescricao(descricao);
-                System.out.println(produto.toString());
-            }
-        } else {
-            System.out.println("Conexão falhou.");
+
+        while (rst.next()) {
+            Produto produto = new Produto();
+            Integer id = rst.getInt("id");
+            produto.setId(id);
+            String nome = rst.getString("nome");
+            produto.setNome(nome);
+            String descricao = rst.getString("descricao");
+            produto.setDescricao(descricao);
+            System.out.println(produto.toString());
         }
+
+        System.out.println("Conexão falhou.");
+
 
         connection.close();
     }
