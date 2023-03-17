@@ -10,16 +10,11 @@ public class TestaInsercaoComParametro {
     public static void main(String[] args) throws SQLException {
         ConectionFactory conectionFactory = new ConectionFactory();
         Connection connection = conectionFactory.criaConexao();
+        connection.setAutoCommit(false);
 
         PreparedStatement stm = connection.prepareStatement("INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
 
-        adicionarVariavel(stm, "Smart TV", "45 Pol Samsung");
-        adicionarVariavel(stm, "Smart TV", "52 Pol Samsung");
-        adicionarVariavel(stm, "Smart TV", "69 Pol Samsung");
-        adicionarVariavel(stm, "Geladeira", "483 Litros Samsung");
-        adicionarVariavel(stm, "Armario", "2 Portas");
-        adicionarVariavel(stm, "Notebook Dell", "15 Pol, 16Gb Ram Processador i7 M2 1TB");
-        adicionarVariavel(stm, "Teclado", "Fortrek G");
+        adicionarVariavel(stm, "Livro", "Clean Code");
 
 
         connection.close();
