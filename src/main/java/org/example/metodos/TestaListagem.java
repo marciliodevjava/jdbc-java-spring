@@ -27,9 +27,6 @@ public class TestaListagem {
             System.out.println(produto.toString());
         }
 
-        System.out.println("Conexão falhou.");
-
-
         connection.close();
     }
 }
