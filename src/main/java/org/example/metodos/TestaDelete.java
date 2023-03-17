@@ -13,8 +13,9 @@ public class TestaDelete {
 
         int id = 13;
 
-        PreparedStatement stm = connection.prepareStatement("DELETE FROM produto WHERE id = " + id, Statement.RETURN_GENERATED_KEYS);
-        stm.execute("DELETE FROM produto WHERE id = " + id);
+        PreparedStatement stm = connection.prepareStatement("DELETE FROM produto WHERE ? = ", Statement.RETURN_GENERATED_KEYS);
+        stm.setInt(1, id);
+        stm.execute();
 
         int linhaModificadas = stm.getUpdateCount();
 
