@@ -3,10 +3,7 @@ package org.example.metodos;
 import org.example.ConectionFactory;
 import org.example.metodos.domain.Produto;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class TestaInsercaoComParametro {
 
@@ -14,18 +11,23 @@ public class TestaInsercaoComParametro {
         ConectionFactory conectionFactory = new ConectionFactory();
         Connection connection = conectionFactory.criaConexao();
 
-        String nomeEnviou = "select * from produto;";
-        String descricaoEnvivou = "Samsung S20";
+        String nomeEnviou = "Resma 1000X";
+        String descricaoEnvivou = "1000 Folhas A4";
 
         nomeEnviou = verifcaSqlInj(nomeEnviou);
         String nome = String.format("'%s'", nomeEnviou);
+        descricaoEnvivou = verifcaSqlInj(descricaoEnvivou);
         String descricao = String.format("'%s'", descricaoEnvivou);
 
         System.out.println(nome);
         System.out.println(descricao);
 
-        Statement stm = connection.createStatement();
-        stm.execute("INSERT INTO produto(nome, descricao) VALUES(" + nome + ", " + descricao + ")", Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement stm = connection.prepareStatement("INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+
+        stm.setString(1,nome);
+        stm.setString(2,descricao);
+
+        stm.execute();
 
         ResultSet rst = stm.getGeneratedKeys();
 
