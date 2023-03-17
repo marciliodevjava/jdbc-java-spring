@@ -2,10 +2,7 @@ package org.example.metodos;
 
 import org.example.ConectionFactory;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class TestaDelete {
 
@@ -16,7 +13,7 @@ public class TestaDelete {
 
         int id = 13;
 
-        Statement stm = connection.createStatement();
+        PreparedStatement stm = connection.prepareStatement("DELETE FROM produto WHERE id = " + id, Statement.RETURN_GENERATED_KEYS);
         stm.execute("DELETE FROM produto WHERE id = " + id);
 
         int linhaModificadas = stm.getUpdateCount();
