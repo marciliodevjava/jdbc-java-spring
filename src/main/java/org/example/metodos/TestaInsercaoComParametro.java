@@ -16,7 +16,6 @@ public class TestaInsercaoComParametro {
 
         adicionarVariavel(stm, "Livro", "Clean Code");
 
-
         connection.close();
     }
 
@@ -25,7 +24,6 @@ public class TestaInsercaoComParametro {
 
         stm.setString(1, nome);
         stm.setString(2, descricao);
-
         stm.execute();
 
         ResultSet rst = stm.getGeneratedKeys();
@@ -59,7 +57,6 @@ public class TestaInsercaoComParametro {
         nomeRecebido = String.format(nomeRecebido).replace("DATABASE", "").trim();
         nomeRecebido = String.format(nomeRecebido).replace("TABLE", "").trim();
         nomeRecebido = String.format(nomeRecebido).replace("USE", "").trim();
-
 
         return nomeRecebido;
     }
