@@ -12,16 +12,14 @@ public class TestaInsercaoComParametro {
         Connection connection = conectionFactory.criaConexao();
         connection.setAutoCommit(false);
 
-        try {
-            PreparedStatement stm = connection.prepareStatement("INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+        try (PreparedStatement stm = connection.prepareStatement(
+                "INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);) {
 
             adicionarVariavel(stm, "Pinsel Fabcastel", "Vermelho");
             adicionarVariavel(stm, "Pinsel Fabcastel", "Preto");
             adicionarVariavel(stm, "Pinsel Fabcastel", "Azul");
 
             connection.commit();
-            stm.close();
-            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("ROLLBACK EXECUTTE : " + e.getMessage());
@@ -36,21 +34,21 @@ public class TestaInsercaoComParametro {
         stm.setString(2, descricao);
         stm.execute();
 
-        ResultSet rst = stm.getGeneratedKeys();
-        
-        if(nome.equals("Pinsel Fabcastel")){
-            throw new RuntimeException("Não foi possivel adicionar o produto");
-        }
+        try (ResultSet rst = stm.getGeneratedKeys();) {
 
-        while (rst.next()) {
-            Produto produto = new Produto();
-            Integer id = rst.getInt(1);
-            produto.setId(id);
-            String nomeInserido = rst.getString(1);
-            produto.setNome(nomeInserido);
-            String descricaoInserido = rst.getString(1);
-            produto.setDescricao(descricaoInserido);
-            System.out.println(produto.toString());
+            if (nome.equals("Pinsel Fabcastel")) {
+                throw new RuntimeException("Não foi possivel adicionar o produto");
+            }
+            while (rst.next()) {
+                Produto produto = new Produto();
+                Integer id = rst.getInt(1);
+                produto.setId(id);
+                String nomeInserido = rst.getString(1);
+                produto.setNome(nomeInserido);
+                String descricaoInserido = rst.getString(1);
+                produto.setDescricao(descricaoInserido);
+                System.out.println(produto.toString());
+            }
         }
 
     }
