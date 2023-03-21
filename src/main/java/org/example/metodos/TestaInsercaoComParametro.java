@@ -12,11 +12,20 @@ public class TestaInsercaoComParametro {
         Connection connection = conectionFactory.criaConexao();
         connection.setAutoCommit(false);
 
-        PreparedStatement stm = connection.prepareStatement("INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+        try {
+            PreparedStatement stm = connection.prepareStatement("INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
 
-        adicionarVariavel(stm, "Livro", "Clean Code");
+            adicionarVariavel(stm, "Pinsel Fabcastel", "Vermelho");
+            adicionarVariavel(stm, "Pinsel Fabcastel", "Preto");
+            adicionarVariavel(stm, "Pinsel Fabcastel", "Azul");
 
-        connection.close();
+            connection.commit();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ROLLBACK EXECUTTE : " + e.getMessage());
+            connection.rollback();
+        }
     }
 
     private static void adicionarVariavel(PreparedStatement stm, String nome, String descricao) throws SQLException {
@@ -27,6 +36,10 @@ public class TestaInsercaoComParametro {
         stm.execute();
 
         ResultSet rst = stm.getGeneratedKeys();
+        
+        if(nome.equals("Pinsel Fabcastel")){
+            throw new RuntimeException("Não foi possivel adicionar o produto");
+        }
 
         while (rst.next()) {
             Produto produto = new Produto();
@@ -38,6 +51,7 @@ public class TestaInsercaoComParametro {
             produto.setDescricao(descricaoInserido);
             System.out.println(produto.toString());
         }
+
     }
 
     private static String verifcaSqlInj(String nomeEnviou) {
