@@ -9,24 +9,24 @@ public class TestaInsercaoComParametro {
 
     public static void main(String[] args) throws SQLException {
         ConectionFactory conectionFactory = new ConectionFactory();
-        Connection connection = conectionFactory.criaConexao();
-        connection.setAutoCommit(false);
+        try (Connection connection = conectionFactory.criaConexao()) {
+            connection.setAutoCommit(false);
 
-        try (PreparedStatement stm = connection.prepareStatement(
-                "INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);) {
+            try (PreparedStatement stm = connection.prepareStatement(
+                    "INSERT INTO produto(nome, descricao) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);) {
 
-            adicionarVariavel(stm, "Pinsel Fabcastel", "Vermelho");
-            adicionarVariavel(stm, "Pinsel Fabcastel", "Preto");
-            adicionarVariavel(stm, "Pinsel Fabcastel", "Azul");
+                adicionarVariavel(stm, "Pinsel Fabcastel", "Vermelho");
+                adicionarVariavel(stm, "Pinsel Fabcastel", "Preto");
+                adicionarVariavel(stm, "Pinsel Fabcastel", "Azul");
 
-            connection.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("ROLLBACK EXECUTTE : " + e.getMessage());
-            connection.rollback();
+                connection.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("ROLLBACK EXECUTTE : " + e.getMessage());
+                connection.rollback();
+            }
         }
     }
-
     private static void adicionarVariavel(PreparedStatement stm, String nome, String descricao) throws SQLException {
 
 
