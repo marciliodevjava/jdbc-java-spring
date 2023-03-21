@@ -15,7 +15,6 @@ public class TestaListagem {
         stm.execute();
         ResultSet rst = stm.getResultSet();
 
-
         while (rst.next()) {
             Produto produto = new Produto();
             Integer id = rst.getInt("id");
@@ -26,7 +25,6 @@ public class TestaListagem {
             produto.setDescricao(descricao);
             System.out.println(produto.toString());
         }
-
         connection.close();
     }
 }
