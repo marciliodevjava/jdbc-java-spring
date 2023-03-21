@@ -20,6 +20,7 @@ public class TestaInsercaoComParametro {
             adicionarVariavel(stm, "Pinsel Fabcastel", "Azul");
 
             connection.commit();
+            stm.close();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
