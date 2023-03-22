@@ -13,7 +13,7 @@ public class ConectionFactory {
     private final String password = "@Sa45781256";
     public DataSource dataSource;
 
-    public ConectionFactory(){
+    public ConectionFactory() throws SQLException {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
         comboPooledDataSource.setJdbcUrl(url);
         comboPooledDataSource.setUser(user);
@@ -22,6 +22,8 @@ public class ConectionFactory {
         comboPooledDataSource.setAcquireRetryAttempts(100);
         comboPooledDataSource.setAcquireRetryDelay(1000);
         comboPooledDataSource.setAutoCommitOnClose(false);
+        comboPooledDataSource.setMaxPoolSize(10);
+        comboPooledDataSource.setMinPoolSize(1);
 
         this.dataSource = comboPooledDataSource;
     }
