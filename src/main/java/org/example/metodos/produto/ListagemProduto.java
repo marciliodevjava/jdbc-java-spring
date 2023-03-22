@@ -1,4 +1,4 @@
-package org.example.metodos;
+package org.example.metodos.produto;
 
 import org.example.ConectionFactory;
 import org.example.metodos.domain.Produto;
