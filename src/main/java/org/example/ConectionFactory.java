@@ -18,6 +18,10 @@ public class ConectionFactory {
         comboPooledDataSource.setJdbcUrl(url);
         comboPooledDataSource.setUser(user);
         comboPooledDataSource.setPassword(password);
+        comboPooledDataSource.setAcquireIncrement(10);
+        comboPooledDataSource.setAcquireRetryAttempts(100);
+        comboPooledDataSource.setAcquireRetryDelay(1000);
+        comboPooledDataSource.setAutoCommitOnClose(false);
 
         this.dataSource = comboPooledDataSource;
     }
