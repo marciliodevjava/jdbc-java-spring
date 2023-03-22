@@ -5,7 +5,7 @@ import org.example.metodos.domain.Produto;
 
 import java.sql.*;
 
-public class TestaInsercaoComParametro {
+public class InsercaoProdutoComParametro {
 
     public static void main(String[] args) throws SQLException {
         ConectionFactory conectionFactory = new ConectionFactory();

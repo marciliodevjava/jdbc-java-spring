@@ -4,7 +4,7 @@ import org.example.ConectionFactory;
 
 import java.sql.*;
 
-public class TestaDelete {
+public class DeleteProduto {
 
     public static void main(String[] args) throws SQLException {
 

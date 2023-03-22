@@ -1,0 +1,167 @@
+[33mcommit 9b6e56d547843cee43b2e9b0d6be9033f795212d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Tue Mar 21 08:49:44 2023 -0300
+
+    Add jar para projeto
+
+[33mcommit fccc5574ac863bb052647d8c97f664d7a4e26d3b[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Tue Mar 21 08:35:48 2023 -0300
+
+    Atualização
+
+[33mcommit 2faa69a74d85f58cbd34fa40c867c1e9cde7d399[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Tue Mar 21 08:33:53 2023 -0300
+
+    Atualização
+
+[33mcommit 3fa440195291b4115c79339e6516871ca6c3fc25[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Tue Mar 21 08:30:21 2023 -0300
+
+    Controle mais fino sobre a inserção.
+
+[33mcommit 396aa7b03ee71d08d7ab276891600944be4138f0[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Tue Mar 21 08:24:06 2023 -0300
+
+    Controle mais fino sobre a inserção.
+
+[33mcommit 0661d46793820ea2212db782a27b44575ae4c6a4[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Mon Mar 20 21:22:20 2023 -0300
+
+    Atualização
+
+[33mcommit 2ac8adaa5f792e78db20c28df916de1cbdd23358[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Mon Mar 20 21:22:03 2023 -0300
+
+    Atualização
+
+[33mcommit 2c0d3c909de4b4d6918c76079d44dc9449ae4d0b[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Mon Mar 20 21:21:37 2023 -0300
+
+    Atualização
+
+[33mcommit 1712ac0b58b1505d25f73e4d2c665b2f6a2f7287[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 18:23:27 2023 -0300
+
+    Atualização
+
+[33mcommit 231e63997de8468bbe438dc77ba331b8249b8d6b[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 18:23:19 2023 -0300
+
+    Atualização
+
+[33mcommit f93d403e965db6f269df63085d9a20afa93de8af[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 18:23:14 2023 -0300
+
+    Atualização
+
+[33mcommit 867bebd1177444f98ae030ca1a1c583b617fd0ce[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 18:23:06 2023 -0300
+
+    Atualização
+
+[33mcommit 676161f707dc412e2ea4fe411950e8b2bf8e004b[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 12:21:47 2023 -0300
+
+    Correção
+
+[33mcommit 389c35c45664a3d26f0b6a72e003d16ce152982f[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 12:21:41 2023 -0300
+
+    Correção
+
+[33mcommit 7bf5e5578aa6a224624c66fd031be1dc2ddf614b[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 12:21:34 2023 -0300
+
+    Correção
+
+[33mcommit 96ad6f2568fdcdb94b6430184f450ea79ab9a376[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 08:49:24 2023 -0300
+
+    Correção para PreparedStatement
+
+[33mcommit 0162b7ad227a89b24c2b4f9c03b894502f2cce01[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 08:47:58 2023 -0300
+
+    Correção para PreparedStatement
+
+[33mcommit 02fee75aaff7136d1494fa021135df230061a490[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 08:46:54 2023 -0300
+
+    Correção para remoção das aspas
+
+[33mcommit 7772494ecb73d120e56a3305039667677518cc76[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 08:46:13 2023 -0300
+
+    Correção para PreparedStatement
+
+[33mcommit 226c86629626dea43183d49e3a83cb9d59063b78[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Fri Mar 17 08:39:27 2023 -0300
+
+    Refatoração PreparedStatement
+
+[33mcommit 85073bc6195a0c61d9b041bf9698b72dd5b6687d[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Thu Mar 16 18:11:46 2023 -0300
+
+    Atualização
+
+[33mcommit eca7af45c7c8db26b4ae1684de8f6289f66a28c9[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Thu Mar 16 15:46:02 2023 -0300
+
+    Atualização
+
+[33mcommit 488fd03707d559663deaa6ee9c12d53fdddf0a6a[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Thu Mar 16 08:34:45 2023 -0300
+
+    Insercao Com Parametros
+
+[33mcommit 19630e5b18f7c0f75e3c46f8e2af6d08fc0fe12c[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Thu Mar 16 08:31:47 2023 -0300
+
+    Atualização
+
+[33mcommit bc229a8bfbf121c2db7aaee0848852f8c0bea501[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Wed Mar 15 08:15:39 2023 -0300
+
+    up
+
+[33mcommit b233470c259efe179e0b4d211035848aa9abe372[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Wed Mar 15 08:14:37 2023 -0300
+
+    up
+
+[33mcommit 17eb6b3a1e6b39985c53f916fb85b14336b60835[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Wed Mar 15 08:13:53 2023 -0300
+
+    Atualização da pastas
+
+[33mcommit 8c870080da7d56665ceac97e6e6d56075b7fefc5[m
+Author: Marcilio Zanatta <103801733+marciliodevjava@users.noreply.github.com>
+Date:   Mon Mar 6 08:46:41 2023 -0300
+
+    Atualizaçao
