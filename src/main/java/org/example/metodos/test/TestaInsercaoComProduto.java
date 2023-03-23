@@ -10,12 +10,18 @@ public class TestaInsercaoComProduto {
 
     public static void main(String[] args) throws SQLException {
 
-        Produto produto = new Produto("Cama Casal", "1.80m x 1.20m");
+        Produto produto = new Produto("Caminão", "Truck");
+        Integer id = 40;
 
         try (Connection connection = new ConectionFactory().criaConexao()) {
             ProdutoRepository repository = new ProdutoRepository(connection);
+            System.out.println("========== ADICIONANDO UM PRODUTO ========== ");
             repository.salvarPrdoduto(produto);
+            System.out.println(produto);
+            System.out.println("========== LISTANDO UM PRODUTO ========== ");
+            repository.listarUmProduto(id);
+            System.out.println("========== LISTANDO TODOS OS PRODUTO ========== ");
+            repository.listarProduto();
         }
-        System.out.println(produto);
     }
 }
