@@ -1,4 +1,4 @@
-package org.example.metodos.produto.dao;
+package org.example.metodos.produto;
 
 import org.example.ConectionFactory;
 
