@@ -33,6 +33,7 @@ public class InsercaoProduto {
             produto.setDescricao(descricaoInserido);
             System.out.println(produto.toString());
         }
+
         connection.close();
     }
 }
