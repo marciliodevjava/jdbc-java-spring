@@ -25,6 +25,7 @@ public class ListagemProduto {
             produto.setDescricao(descricao);
             System.out.println(produto.toString());
         }
+
         connection.close();
     }
 }
