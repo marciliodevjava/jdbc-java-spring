@@ -24,6 +24,7 @@ public class PersistenciaDAO {
             pstm.execute();
 
             try(ResultSet rst = pstm.getGeneratedKeys()){
+
                 while(rst.next()){
                     produto.setId(rst.getInt(1));
                 }
