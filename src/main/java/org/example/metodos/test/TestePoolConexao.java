@@ -21,6 +21,7 @@ public class TestePoolConexao {
             conectionFactory.criaConexao();
             System.out.println("Conexão Nº: " + i );
         }
+
         System.out.println("Fechando Conexão!");
         conectionFactory.criaConexao();
     }
