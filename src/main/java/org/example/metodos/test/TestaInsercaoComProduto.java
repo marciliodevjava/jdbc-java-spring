@@ -18,6 +18,7 @@ public class TestaInsercaoComProduto {
 
             new PersistenciaDAO(connection).salvarProdutoDAO(produto);
         }
+
         System.out.println(produto);
     }
 }
