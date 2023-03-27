@@ -11,12 +11,12 @@ public class TestaInsercaoComProduto {
 
     public static void main(String[] args) throws SQLException {
 
-        Produto produto = new Produto("Caminão", "Truck");
+        Produto produto = new Produto("Copo", "Amarelo");
         Integer id = 40;
 
         try (Connection connection = new ConectionFactory().criaConexao()) {
-
-            new PersistenciaDAO(connection).salvarProdutoDAO(produto);
+            PersistenciaDAO persistenciaDAO = new PersistenciaDAO(connection);
+            persistenciaDAO.salvarProdutoDAO(produto);
         }
 
         System.out.println(produto);

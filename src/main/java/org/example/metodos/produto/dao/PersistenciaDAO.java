@@ -16,7 +16,7 @@ public class PersistenciaDAO {
 
     public void salvarProdutoDAO(Produto produto) throws SQLException {
 
-        String sql = "INSERTE INTO produto(nome, descricao) VALUES(?, ?)";
+        String sql = "INSERT INTO produto(nome, descricao) VALUES(?, ?)";
         try(PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             pstm.setString(1, produto.getNome());
             pstm.setString(2, produto.getDescricao());
