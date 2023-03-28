@@ -6,6 +6,7 @@ import org.example.metodos.produto.dao.PersistenciaDAO;
 import org.example.metodos.repository.ProdutoRepository;
 
 import java.sql.*;
+import java.util.List;
 
 public class TestaInsercaoComProduto {
 
@@ -17,7 +18,9 @@ public class TestaInsercaoComProduto {
         try (Connection connection = new ConectionFactory().criaConexao()) {
             PersistenciaDAO persistenciaDAO = new PersistenciaDAO(connection);
             persistenciaDAO.salvarProdutoDAO(produto);
-            persistenciaDAO.listarProduto();
+            List<Produto> listar = persistenciaDAO.listarProduto();
+
+            listar.forEach(System.out::println);
         }
 
         System.out.println(produto);
