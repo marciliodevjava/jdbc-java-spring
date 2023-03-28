@@ -5,6 +5,8 @@ import org.example.metodos.domain.Produto;
 import org.example.metodos.repository.ProdutoRepository;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PersistenciaDAO {
 
@@ -32,9 +34,11 @@ public class PersistenciaDAO {
         }
     }
 
-    public void listarProduto() throws SQLException{
+    public List<Produto> listarProduto() throws SQLException{
 
         String sql = "SELECT id, nome, descricao FROM produto";
+
+        List<Produto> produtoList = new ArrayList<>();
         try(PreparedStatement pstm = connection.prepareStatement(sql, Statement.NO_GENERATED_KEYS)){
 
             pstm.execute();
@@ -49,8 +53,11 @@ public class PersistenciaDAO {
                     String descricao = rst.getString("descricao");
                     produto.setDescricao(descricao);
                     System.out.println(produto.toString());
+
+                    produtoList.add(produto);
                 }
             }
         }
+        return produtoList;
     }
 }
