@@ -18,7 +18,7 @@ public class Produto {
     }
 
     public Produto(String nome, String descricao){
-        this.id = id;
+        super();
         this.nome = nome;
         this.descricao = descricao;
     }
