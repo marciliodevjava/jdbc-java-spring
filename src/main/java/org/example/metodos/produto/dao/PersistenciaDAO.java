@@ -31,4 +31,26 @@ public class PersistenciaDAO {
             }
         }
     }
+
+    public void listarProduto() throws SQLException{
+
+        String sql = "SELECT id, nome, descricao FROM produto";
+        try(PreparedStatement pstm = connection.prepareStatement(sql, Statement.NO_GENERATED_KEYS)){
+
+            pstm.execute();
+
+            try(ResultSet rst = pstm.getResultSet()){
+                while (rst.next()){
+                    Produto produto = new Produto();
+                    Integer id = rst.getInt("id");
+                    produto.setId(id);
+                    String nome = rst.getString("nome");
+                    produto.setNome(nome);
+                    String descricao = rst.getString("descricao");
+                    produto.setDescricao(descricao);
+                    System.out.println(produto.toString());
+                }
+            }
+        }
+    }
 }
