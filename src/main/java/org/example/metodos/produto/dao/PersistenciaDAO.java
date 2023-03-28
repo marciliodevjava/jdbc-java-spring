@@ -52,7 +52,6 @@ public class PersistenciaDAO {
                     produto.setNome(nome);
                     String descricao = rst.getString("descricao");
                     produto.setDescricao(descricao);
-                    System.out.println(produto.toString());
 
                     produtoList.add(produto);
                 }
