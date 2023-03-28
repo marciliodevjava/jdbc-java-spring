@@ -1,6 +1,7 @@
 package org.example;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import lombok.Value;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
