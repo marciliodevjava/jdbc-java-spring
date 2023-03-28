@@ -11,7 +11,7 @@ public class TestaInsercaoComProduto {
 
     public static void main(String[] args) throws SQLException {
 
-        Produto produto = new Produto("Copo", "Vermelho");
+        Produto produto = new Produto("Esqueiro", "BIC Verde");
         Integer id = 40;
 
         try (Connection connection = new ConectionFactory().criaConexao()) {
