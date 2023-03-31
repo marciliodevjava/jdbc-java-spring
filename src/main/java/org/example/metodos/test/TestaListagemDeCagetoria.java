@@ -19,11 +19,10 @@ public class TestaListagemDeCagetoria {
             List<Categoria> listaCategoria = categoriaDAO.listar();
 
             listaCategoria.stream().forEach(ct -> {
-                System.out.println(ct.toString());
+                System.out.println(ct.getNome());
                 try {
                     for (Produto produto : new ProdutoDAO(connection).buscarPorCategoria(ct)) {
-                        System.out.println("Categoria: " + ct.getNome() +
-                                " Nome: " + produto.getNome() +
+                        System.out.println(" Nome: " + produto.getNome() +
                                 " Descrição: " + produto.getDescricao());
                     }
                 } catch (SQLException e) {
