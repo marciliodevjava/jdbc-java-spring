@@ -16,17 +16,12 @@ public class TestaListagemDeCagetoria {
     public static void main(String[] args) throws SQLException {
         try (Connection connection = new ConectionFactory().criaConexao()) {
             CategoriaDAO categoriaDAO = new CategoriaDAO(connection);
-            List<Categoria> listaCategoria = categoriaDAO.listar();
-
+            List<Categoria> listaCategoria = categoriaDAO.listarComProdutos();
             listaCategoria.stream().forEach(ct -> {
                 System.out.println(ct.getNome());
-                try {
-                    for (Produto produto : new ProdutoDAO(connection).buscarPorCategoria(ct)) {
-                        System.out.println(" Nome: " + produto.getNome() +
-                                " Descrição: " + produto.getDescricao());
-                    }
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                for (Produto produto : ct.getProdutos()) {
+                    System.out.println(" Nome: " + produto.getNome() +
+                            " Descrição: " + produto.getDescricao());
                 }
             });
         }
